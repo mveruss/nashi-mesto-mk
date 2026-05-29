@@ -522,14 +522,36 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
   display:flex; flex-direction:column; gap:8px; z-index:100;
 }
 .nav-dot {
+  position:relative;
   width:8px; height:8px; border-radius:50%;
   background:rgba(124,58,237,.2); cursor:pointer;
   transition:all .25s ease; border:none; padding:0;
+  /* расширяем зону клика прозрачным отступом */
+  box-sizing:content-box;
+  outline: 8px solid transparent;
 }
 .nav-dot.active {
   background:linear-gradient(135deg,#7c3aed,#0ea5e9);
   height:24px; border-radius:4px;
 }
+/* Мгновенный кастомный тултип — без браузерной задержки */
+.nav-dot::after {
+  content: attr(data-num);
+  position:absolute;
+  right:calc(100% + 14px);
+  top:50%; transform:translateY(-50%);
+  background:rgba(15,10,46,0.88);
+  color:#fff;
+  font-family:var(--font-body);
+  font-size:12px; font-weight:700;
+  padding:3px 9px; border-radius:6px;
+  white-space:nowrap; pointer-events:none;
+  opacity:0;
+  transition:opacity 0.07s ease;
+  backdrop-filter:blur(6px);
+  box-shadow:0 2px 8px rgba(0,0,0,.25);
+}
+.nav-dot:hover::after { opacity:1; }
 .slide-counter {
   position:fixed; bottom:clamp(1rem,2.5vw,2rem); right:clamp(1rem,2vw,1.8rem);
   font-family:var(--font-display); font-size:clamp(.7rem,.9vw,.85rem);
@@ -2144,7 +2166,8 @@ const total = slides.length;
 slides.forEach((_, i) => {
   const btn = document.createElement('button');
   btn.className = 'nav-dot';
-  btn.title = 'Слайд ' + (i + 1);
+  btn.dataset.num = i + 1;           // кастомный тултип через CSS ::after
+  btn.setAttribute('aria-label', 'Слайд ' + (i + 1));
   btn.addEventListener('click', () => scrollToSlide(i));
   navDots.appendChild(btn);
 });
