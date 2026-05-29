@@ -1988,13 +1988,35 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
       <div class="section-badge reveal">Что вы заберёте</div>
       <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.6rem);font-weight:800;letter-spacing:-.01em;text-transform:uppercase;color:var(--dark)" class="reveal">5 результатов спустя 4 дня</h2>
     </div>
-    <ul class="num-list reveal" style="flex:1;justify-content:center;max-width:76%;gap:clamp(.9rem,1.6vw,1.5rem)">
-      <li style="font-size:clamp(1.35rem,2.1vw,1.85rem)"><span class="num-badge">01</span>Готовые запросы под ваши задачи - что написать нейросети, чтобы сразу получить нужный результат</li>
-      <li style="font-size:clamp(1.35rem,2.1vw,1.85rem)"><span class="num-badge">02</span>Нейросеть, которая знает вас: ваш ритм, задачи, приоритеты - не нужно объяснять каждый раз заново</li>
-      <li style="font-size:clamp(1.35rem,2.1vw,1.85rem)"><span class="num-badge">03</span>2-3 задачи из вашей жизни, которые вы решите прямо на практикуме</li>
-      <li style="font-size:clamp(1.35rem,2.1vw,1.85rem)"><span class="num-badge">04</span>Навык глубинного исследования вашей сложной задачи - за минуты то, что раньше требовало профильного специалиста</li>
-      <li style="font-size:clamp(1.35rem,2.1vw,1.85rem)"><span class="num-badge">05</span>Конкретные следующие шаги для вашей жизни и работы</li>
-    </ul>
+    <div class="reveal" style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:clamp(.65rem,1.1vw,1rem);align-content:center;max-width:80%">
+
+      <div class="glass-card" style="padding:clamp(.9rem,1.4vw,1.25rem);display:flex;flex-direction:column;gap:.45rem;border-top:3px solid rgba(124,58,237,.45)">
+        <span class="num-badge" style="align-self:flex-start">01</span>
+        <span style="font-size:clamp(1.1rem,1.6vw,1.38rem);color:rgba(15,10,46,0.75);line-height:1.42">Готовые запросы под ваши задачи - что написать нейросети, чтобы сразу получить нужный результат</span>
+      </div>
+
+      <div class="glass-card" style="padding:clamp(.9rem,1.4vw,1.25rem);display:flex;flex-direction:column;gap:.45rem;border-top:3px solid rgba(2,132,199,.45)">
+        <span class="num-badge" style="align-self:flex-start;color:var(--blue);background:linear-gradient(135deg,rgba(2,132,199,.15),rgba(14,165,233,.1))">02</span>
+        <span style="font-size:clamp(1.1rem,1.6vw,1.38rem);color:rgba(15,10,46,0.75);line-height:1.42">Нейросеть, которая знает вас: ваш ритм, задачи, приоритеты - не нужно объяснять каждый раз заново</span>
+      </div>
+
+      <div class="glass-card" style="padding:clamp(.9rem,1.4vw,1.25rem);display:flex;flex-direction:column;gap:.45rem;border-top:3px solid rgba(190,24,93,.45)">
+        <span class="num-badge" style="align-self:flex-start;color:var(--raspberry);background:linear-gradient(135deg,rgba(190,24,93,.15),rgba(124,58,237,.1))">03</span>
+        <span style="font-size:clamp(1.1rem,1.6vw,1.38rem);color:rgba(15,10,46,0.75);line-height:1.42">2-3 задачи из вашей жизни, которые вы решите прямо на практикуме</span>
+      </div>
+
+      <div class="glass-card" style="padding:clamp(.9rem,1.4vw,1.25rem);display:flex;flex-direction:column;gap:.45rem;border-top:3px solid rgba(124,58,237,.45)">
+        <span class="num-badge" style="align-self:flex-start">04</span>
+        <span style="font-size:clamp(1.1rem,1.6vw,1.38rem);color:rgba(15,10,46,0.75);line-height:1.42">Навык глубинного исследования вашей сложной задачи - за минуты то, что раньше требовало профильного специалиста</span>
+      </div>
+
+      <!-- Пятая карточка по центру — занимает оба столбца, но шириной как одна ячейка -->
+      <div class="glass-card" style="grid-column:span 2;justify-self:center;width:calc(50% - clamp(.325rem,.55vw,.5rem));padding:clamp(.9rem,1.4vw,1.25rem);display:flex;flex-direction:column;gap:.45rem;border-top:3px solid rgba(14,165,233,.45)">
+        <span class="num-badge" style="align-self:flex-start;color:#0ea5e9;background:linear-gradient(135deg,rgba(14,165,233,.2),rgba(2,132,199,.1))">05</span>
+        <span style="font-size:clamp(1.1rem,1.6vw,1.38rem);color:rgba(15,10,46,0.75);line-height:1.42">Конкретные следующие шаги для вашей жизни и работы</span>
+      </div>
+
+    </div>
   </div>
 </section>
 
