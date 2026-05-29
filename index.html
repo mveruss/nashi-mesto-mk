@@ -73,8 +73,12 @@ html, body { height:100%; overflow:hidden; scroll-snap-type: y mandatory; scroll
   width: clamp(360px, 58vw, 700px);
   height: clamp(360px, 58vw, 700px);
   pointer-events: none;
-  mask-image: linear-gradient(to right, transparent 0%, black 28%);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 28%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%),
+              linear-gradient(to right, transparent 0%, black 28%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%),
+              linear-gradient(to right, transparent 0%, black 28%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 }
 .vortex-layer { position: absolute; border-radius: 50%; }
 .vortex-1 {
@@ -277,7 +281,7 @@ html, body { height:100%; overflow:hidden; scroll-snap-type: y mandatory; scroll
    SPLIT LAYOUT
    ============================================================ */
 .split {
-  display:grid; grid-template-columns:1fr 1fr;
+  display:grid; grid-template-columns:1.3fr 0.7fr;
   height:100%;
 }
 .left-panel {
@@ -582,7 +586,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
   margin-bottom:clamp(.8rem,1.5vw,1.4rem);
 }
 .lead-white {
-  font-size:clamp(1.1rem,1.8vw,1.5rem); color:rgba(255,255,255,0.45);
+  font-size:clamp(1.35rem,2.2vw,1.9rem); color:rgba(255,255,255,0.55);
   font-weight:400; line-height:1.5;
 }
 .section-badge-dark {
@@ -641,7 +645,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
    CAMP CARDS (два лагеря)
    ============================================================ */
 .camp-grid {
-  display:grid; grid-template-columns:1fr 1fr;
+  display:grid; grid-template-columns:1.3fr 0.7fr;
   gap:clamp(1rem,2vw,1.8rem); width:100%; max-width:940px;
 }
 .camp-card {
@@ -662,7 +666,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 .camp-card-1 .camp-title { color:var(--violet); }
 .camp-card-2 .camp-title { color:var(--raspberry); }
 .camp-text {
-  font-size:clamp(.95rem,1.4vw,1.2rem); line-height:1.5;
+  font-size:clamp(1.25rem,2vw,1.7rem); line-height:1.5;
   color:rgba(15,10,46,0.68); font-weight:400;
 }
 
@@ -714,18 +718,18 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
    TWO-COL LIST (Дома / На работе)
    ============================================================ */
 .two-col-list {
-  display:grid; grid-template-columns:1fr 1fr;
+  display:grid; grid-template-columns:1.3fr 0.7fr;
   gap:clamp(.8rem,1.5vw,1.4rem);
 }
 .col-block { display:flex; flex-direction:column; gap:clamp(.5rem,.9vw,.8rem); }
 .col-header {
-  font-family:var(--font-display); font-size:clamp(1rem,1.6vw,1.35rem);
+  font-family:var(--font-display); font-size:clamp(1.3rem,2.1vw,1.8rem);
   font-weight:700; color:var(--dark); text-transform:uppercase;
   letter-spacing:.05em; margin-bottom:.2rem;
   display:flex; align-items:center; gap:.5rem;
 }
 .col-item {
-  font-size:clamp(.92rem,1.4vw,1.2rem); color:rgba(15,10,46,0.68);
+  font-size:clamp(1.15rem,1.8vw,1.5rem); color:rgba(15,10,46,0.68);
   line-height:1.45; display:flex; align-items:flex-start; gap:.5rem;
 }
 .col-item::before {
@@ -1067,7 +1071,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 9б — ЭТО ПРОИСХОДИТ В РОССИИ (ещё 2 новости)
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s9b">
+<section class="slide" id="s10">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(1rem,2vw,1.6rem) clamp(2rem,5vw,5rem);gap:clamp(.6rem,1vw,.9rem);position:relative;z-index:10">
@@ -1113,7 +1117,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 10 — НА МИРОВОМ РЫНКЕ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s10">
+<section class="slide" id="s11">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
 
@@ -1162,7 +1166,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 11 — ИЛЛЮЗИЯ СТАБИЛЬНОСТИ РУХНУЛА
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s11">
+<section class="slide" id="s12">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1186,7 +1190,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 12 — ИИ НЕ ТРЕНД
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s12">
+<section class="slide" id="s13">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(124,58,237,0.16),rgba(14,165,233,0.1),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1210,7 +1214,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 13 — КАК ВЫ ИСПОЛЬЗУЕТЕ ИИ?
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s13">
+<section class="slide" id="s14">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(6,182,212,0.16),rgba(124,58,237,0.08),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1223,7 +1227,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 14 — ДВА ЛАГЕРЯ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s14">
+<section class="slide" id="s15">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="centered" style="gap:clamp(1.2rem,2.5vw,2.5rem)">
@@ -1246,7 +1250,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 15 — ПОСМОТРИТЕ ВНУТРЬ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s15">
+<section class="slide" id="s16">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(190,24,93,0.14),rgba(124,58,237,0.09),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1260,7 +1264,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 16 — ПЕРЕХОД К БЛОКУ 3
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s16">
+<section class="slide" id="s17">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(124,58,237,0.18),rgba(14,165,233,0.1),transparent 65%)"></div>
   <div class="bg-grid"></div>
@@ -1273,7 +1277,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 17 — БЛОК 3: ЧТО УМЕЮТ НЕЙРОСЕТИ
      ══════════════════════════════════════════════════════ -->
-<section class="slide dark-slide" id="s17">
+<section class="slide dark-slide" id="s18">
   <div class="bg-grid"></div>
   <div class="dark-glow"></div>
   <div class="centered">
@@ -1286,7 +1290,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 18 — ИИ НЕ ПОИСКОВИК
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s18">
+<section class="slide" id="s19">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1309,7 +1313,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 19 — ЧТО ИИ ДЕЛАЕТ ВМЕСТО ВАС
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s19">
+<section class="slide" id="s20">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1341,7 +1345,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 20 — ЧТО Я ДЕЛАЮ С ИИ КАЖДУЮ НЕДЕЛЮ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s20">
+<section class="slide" id="s21">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1366,7 +1370,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 21 — ФОРМУЛА ХОРОШЕГО ЗАПРОСА
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s21">
+<section class="slide" id="s22">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1377,8 +1381,8 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
       <div class="glass-card reveal" style="padding:clamp(1rem,2vw,1.8rem);margin-top:.5rem">
         <div style="font-family:var(--font-display);font-size:clamp(1.1rem,2vw,1.8rem);font-weight:800;color:var(--violet);text-transform:uppercase;letter-spacing:.04em;margin-bottom:.8rem">Кому · Что нужно · В каком виде</div>
         <div style="display:flex;flex-direction:column;gap:.8rem">
-          <div style="font-size:clamp(.9rem,1.4vw,1.2rem);color:rgba(15,10,46,0.45);display:flex;gap:.6rem;align-items:flex-start"><span>❌</span><span>Слабо: «составь меню»</span></div>
-          <div style="font-size:clamp(.9rem,1.4vw,1.2rem);color:rgba(15,10,46,0.75);display:flex;gap:.6rem;align-items:flex-start"><span>✅</span><span>Сильно: «Ты диетолог. Меню на неделю, семья из 4, бюджет 5000 р. Таблицей.»</span></div>
+          <div style="font-size:clamp(1.15rem,1.8vw,1.5rem);color:rgba(15,10,46,0.45);display:flex;gap:.6rem;align-items:flex-start"><span>❌</span><span>Слабо: «составь меню»</span></div>
+          <div style="font-size:clamp(1.15rem,1.8vw,1.5rem);color:rgba(15,10,46,0.75);display:flex;gap:.6rem;align-items:flex-start"><span>✅</span><span>Сильно: «Ты диетолог. Меню на неделю, семья из 4, бюджет 5000 р. Таблицей.»</span></div>
         </div>
       </div>
     </div>
@@ -1391,7 +1395,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 22 — БЛОК 4: КЕЙСЫ СТАНИСЛАВА
      ══════════════════════════════════════════════════════ -->
-<section class="slide dark-slide" id="s22">
+<section class="slide dark-slide" id="s23">
   <div class="bg-grid"></div>
   <div class="dark-glow"></div>
   <div class="centered">
@@ -1408,7 +1412,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 23 — КЕЙС 1: ФОТО ДО (Яндекс.Карты)
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s23">
+<section class="slide" id="s24">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(1rem,2vw,1.6rem) clamp(2rem,5vw,5rem);gap:clamp(.6rem,1vw,.9rem);position:relative;z-index:10">
@@ -1437,7 +1441,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 24б — КЕЙС 2: ФОТО ПОСЛЕ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s24b">
+<section class="slide" id="s25">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(1rem,2vw,1.6rem) clamp(2rem,5vw,5rem);gap:clamp(.6rem,1vw,.9rem);position:relative;z-index:10">
@@ -1458,9 +1462,36 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 </section>
 
 <!-- ══════════════════════════════════════════════════════
-     СЛАЙД 25 — КЕЙС 3 (PLACEHOLDER)
+     СЛАЙД — КЕЙС 2
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s25">
+<section class="slide" id="s26">
+  <div class="bg-radial"></div>
+  <div class="bg-grid"></div>
+  <div class="split">
+    <div class="left-panel">
+      <div class="accent-bar"></div>
+      <div class="section-badge reveal">Кейс 2</div>
+      <h2 class="slide-title reveal">Название кейса</h2>
+      <ul class="check-list reveal">
+        <li><span class="icon icon-violet"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V17z"/></svg></span><span class="li-text">Что нужно было сделать</span></li>
+        <li><span class="icon icon-violet"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V17z"/></svg></span><span class="li-text">Что сделала нейросеть</span></li>
+        <li><span class="icon icon-violet"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V17z"/></svg></span><span class="li-text">Итог: сколько времени сэкономил</span></li>
+      </ul>
+    </div>
+    <div class="right-panel">
+      <div class="screenshot-ph reveal" style="width:clamp(240px,38vw,440px);height:clamp(200px,40vh,380px)">
+        <span class="ph-icon">🖼</span>
+        <span>Скриншот - добавить</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     СЛАЙД 27 — КЕЙС 3 (PLACEHOLDER)
+     ══════════════════════════════════════════════════════ -->
+<section class="slide" id="s27">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1486,11 +1517,10 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 26 — БЛОК 5: ВРЕМЯ ПРАКТИКИ
      ══════════════════════════════════════════════════════ -->
-<section class="slide dark-slide" id="s26">
+<section class="slide dark-slide" id="s28">
   <div class="bg-grid"></div>
   <div class="dark-glow"></div>
   <div class="centered">
-    <div class="section-badge-dark reveal">Блок 5 · Живые кейсы</div>
     <div class="block-num reveal">05</div>
     <h1 class="display-title-white reveal">Время<br>практики</h1>
   </div>
@@ -1499,7 +1529,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 27 — ВАША ОЧЕРЕДЬ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s27">
+<section class="slide" id="s29">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1528,7 +1558,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 28 — ОТКРОЙТЕ ИИ НА ТЕЛЕФОНЕ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s28">
+<section class="slide" id="s30">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(14,165,233,0.16),rgba(124,58,237,0.1),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1558,7 +1588,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 29 — НЕ ОТКРЫЛОСЬ?
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s29">
+<section class="slide" id="s31">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split">
@@ -1587,7 +1617,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 30 — СКОПИРУЙТЕ ПРОМПТ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s30">
+<section class="slide" id="s32">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(1rem,2vw,1.8rem) clamp(2rem,5vw,5rem);gap:clamp(.5rem,.9vw,.8rem);position:relative;z-index:10;align-items:center">
@@ -1648,7 +1678,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 31 — ЧТО У ВАС ПОЛУЧИЛОСЬ?
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s31">
+<section class="slide" id="s33">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(14,165,233,0.18),rgba(124,58,237,0.1),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1661,7 +1691,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 32 — ВЫ НАШЛИ СВОЮ ЗАДАЧУ?
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s32">
+<section class="slide" id="s34">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(124,58,237,0.18),rgba(190,24,93,0.1),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1675,7 +1705,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 33 — ЕЩЁ ОДИН ПРОМПТ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s33">
+<section class="slide" id="s35">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(2rem,3.5vw,3rem) clamp(3.5rem,7vw,7rem);gap:clamp(.5rem,.9vw,.8rem);position:relative;z-index:10;align-items:center">
@@ -1735,7 +1765,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 34 — БЛОК 6: ПЛАН НА 100 ДНЕЙ
      ══════════════════════════════════════════════════════ -->
-<section class="slide dark-slide" id="s34">
+<section class="slide dark-slide" id="s36">
   <div class="bg-grid"></div>
   <div class="dark-glow"></div>
   <div class="centered">
@@ -1749,7 +1779,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 35 — ДНИ 0-10: ЗАВЕДИТЕ ПРИВЫЧКУ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s35">
+<section class="slide" id="s37">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="day-layout">
@@ -1771,7 +1801,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 36 — ДНИ 10-30: ПОДРУЖИТЕСЬ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s36">
+<section class="slide" id="s38">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="day-layout">
@@ -1793,7 +1823,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 37 — ДНИ 30-60: ОСВОБОДИТЕ ВРЕМЯ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s37">
+<section class="slide" id="s39">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="day-layout">
@@ -1815,7 +1845,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 38 — ДНИ 60-80: БИБЛИОТЕКА
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s38">
+<section class="slide" id="s40">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="day-layout">
@@ -1837,7 +1867,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 39 — ДНИ 80-100: ИИ КАК ЧАСТЬ МЫШЛЕНИЯ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s39">
+<section class="slide" id="s41">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(124,58,237,0.16),rgba(14,165,233,0.1),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1860,7 +1890,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 40 — ЗАБИРАЙТЕ ПЛАН
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s40">
+<section class="slide" id="s42">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(124,58,237,0.18),rgba(190,24,93,0.1),transparent 65%)"></div>
   <div class="bg-grid"></div>
@@ -1877,7 +1907,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 41 — МОСТ К ПРАКТИКУМУ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s41">
+<section class="slide" id="s43">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(124,58,237,0.16),rgba(14,165,233,0.1),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1891,7 +1921,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 42 — АНОНС ПРАКТИКУМА
      ══════════════════════════════════════════════════════ -->
-<section class="slide dark-slide" id="s42">
+<section class="slide dark-slide" id="s44">
   <div class="bg-grid"></div>
   <div class="dark-glow"></div>
   <div class="centered" style="gap:clamp(1.4rem,2.5vw,2.5rem)">
@@ -1905,7 +1935,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 43 — 10+ ЧАСОВ В НЕДЕЛЮ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s43">
+<section class="slide" id="s45">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div class="split" style="grid-template-columns:0.85fr 1.15fr">
@@ -1929,7 +1959,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 44 — 5 РЕЗУЛЬТАТОВ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s44">
+<section class="slide" id="s46">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(1.5rem,3vw,2.8rem) clamp(2rem,5vw,5rem);gap:clamp(.6rem,1.1vw,1rem);position:relative;z-index:10">
@@ -1950,7 +1980,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 45 — ПРОБОВАЛИ РАНЬШЕ - НЕ ПОШЛО?
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s45">
+<section class="slide" id="s47">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(190,24,93,0.14),rgba(124,58,237,0.09),transparent 70%)"></div>
   <div class="bg-grid"></div>
@@ -1966,7 +1996,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 46 — КАК УСТРОЕН ПРАКТИКУМ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s46">
+<section class="slide" id="s48">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(1.5rem,3vw,2.8rem) clamp(2rem,5vw,5rem);gap:clamp(.8rem,1.3vw,1.2rem);position:relative;z-index:10">
@@ -1999,7 +2029,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 47 — О ВЕДУЩИХ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s47">
+<section class="slide" id="s49">
   <div class="bg-radial"></div>
   <div class="bg-grid"></div>
   <div style="display:flex;flex-direction:column;height:100%;padding:clamp(1.2rem,2.5vw,2rem) clamp(2rem,5vw,5rem);gap:clamp(.6rem,1vw,.9rem);position:relative;z-index:10;overflow:hidden">
@@ -2054,7 +2084,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 48 — СПЕЦПРЕДЛОЖЕНИЕ
      ══════════════════════════════════════════════════════ -->
-<section class="slide" id="s48">
+<section class="slide" id="s50">
   <div class="bg-radial"></div>
   <div class="glow-center" style="background:radial-gradient(circle,rgba(124,58,237,0.18),rgba(190,24,93,0.1),transparent 65%)"></div>
   <div class="bg-grid"></div>
@@ -2082,7 +2112,7 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
 <!-- ══════════════════════════════════════════════════════
      СЛАЙД 49 — ФИНАЛЬНЫЙ CTA
      ══════════════════════════════════════════════════════ -->
-<section class="slide dark-slide" id="s49">
+<section class="slide dark-slide" id="s51">
   <div class="bg-grid"></div>
   <div class="dark-glow"></div>
   <div class="split">
