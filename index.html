@@ -1001,17 +1001,17 @@ body.edit-mode .dark-slide [contenteditable="true"]:focus {
       <h2 style="font-family:var(--font-display);font-size:clamp(1.6rem,3vw,2.8rem);font-weight:700;color:var(--dark);letter-spacing:-.01em;line-height:1" class="reveal">Вакансии сокращаются. Резюме - растут.</h2>
       <p class="lead reveal" style="margin-left:auto;color:rgba(15,10,46,0.45);white-space:nowrap;font-size:clamp(.95rem,1.4vw,1.2rem)">Это уже происходит.</p>
     </div>
-    <!-- Два скриншота рядом — без обрезки, пропорции оригинальные -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(.8rem,1.5vw,1.5rem);align-items:start">
-      <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 8px 36px rgba(0,0,0,0.13)">
+    <!-- Два скриншота рядом — пропорции оригинальные, масштаб по высоте слайда -->
+    <div style="display:flex;gap:clamp(.8rem,1.5vw,1.5rem);align-items:flex-start;justify-content:center">
+      <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 8px 36px rgba(0,0,0,0.13);flex-shrink:0">
         <img src="./claude-design/рынок труда1.jpg"
              alt="Статистика рынка труда"
-             style="width:100%;height:auto;display:block">
+             style="display:block;width:auto;max-width:calc(48vw - 3rem);height:auto;max-height:calc(100vh - 9rem)">
       </div>
-      <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 8px 36px rgba(0,0,0,0.13)">
+      <div class="reveal" style="border-radius:16px;overflow:hidden;box-shadow:0 8px 36px rgba(0,0,0,0.13);flex-shrink:0">
         <img src="./claude-design/рынок труда2.jpg"
              alt="Статистика рынка труда"
-             style="width:100%;height:auto;display:block">
+             style="display:block;width:auto;max-width:calc(48vw - 3rem);height:auto;max-height:calc(100vh - 9rem)">
       </div>
     </div>
   </div>
